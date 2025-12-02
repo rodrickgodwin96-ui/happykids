@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="refresh" content="15"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Happy Kids Learning - Fun Educational Videos & Stories for Children</title>
+    <meta name="description"
+        content="Happy Kids Learning provides fun, educational videos, Bible stories, ABC songs, and animal cartoons for toddlers and preschoolers. Perfect for kids aged 2–8 in the USA, UK, and Canada.">
+    <meta name="keywords"
+        content="kids educational website, ABC songs for toddlers, Bible stories for kids, fun learning videos, animal cartoons for children, online learning for preschoolers, kids learning platform, Christian kids videos">
+    <meta name="author" content="Happy Kids Learning">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#FFCC00">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Happy Kids Learning - Fun Educational Videos for Children">
+    <meta property="og:description"
+        content="Watch free educational content, Bible stories, ABC learning, and fun animal cartoons for children aged 2–8.">
+    <meta property="og:url" content="https://www.happykidslearning.com">
+    <meta property="og:image" content="https://www.happykidslearning.com/images/social-preview.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Happy Kids Learning - Educational Fun for Kids">
+    <meta name="twitter:description"
+        content="Fun & safe learning videos, stories, and songs for kids aged 2 to 8. Watch and learn with animals, Bible stories, and ABCs.">
+    <meta name="twitter:image" content="https://www.happykidslearning.com/images/social-preview.jpg">
+
+    <link rel="stylesheet" href="icons/bootstrap-icons.css">
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.happykidslearning.com/">
+
+    <!-- Favicon and Icons -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+    <!-- Manifest (for PWA) -->
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Font and Styles (optional but good for appearance) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <script src="java2.js"></script>
+    <style>
+        body {
+            background-color: #f2e9ff;
+            font-family: 'Comic Sans MS', cursive;
+            padding-top: 70px;
+            /* space for navbar */
+        }
+
+        /* NAVBAR DESIGN */
+        .custom-navbar {
+            background: linear-gradient(90deg, #00ff48, #00c9a7);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.4s ease-in-out;
+            padding: 10px 20px;
+        }
+
+        .custom-navbar .nav-link {
+            color: #ffffff;
+            font-weight: 600;
+            margin: 0 10px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .custom-navbar .nav-link:hover {
+            color: #fffce6;
+            transform: scale(1.1);
+        }
+
+        .custom-navbar .navbar-brand {
+            font-size: 24px;
+            transition: transform 0.3s ease;
+        }
+
+        .custom-navbar .navbar-brand:hover {
+            transform: rotate(-2deg) scale(1.05);
+        }
+
+        .custom-navbar .form-control {
+            border-radius: 50px;
+            padding: 5px 15px;
+        }
+
+        /* SECTION TITLE */
+        .section-title {
+            font-size: 28px;
+            color: #ff3399;
+            margin: 30px 0 20px;
+            text-align: center;
+        }
+
+        /* CAROUSEL */
+        .carousel-inner img {
+            height: 50vh;
+            object-fit: cover;
+        }
+
+        /* VIDEO CARDS */
+        .card video {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .card {
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-body {
+            padding: 0.75rem;
+            background-color: #fffce6;
+        }
+
+        .card-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #00704a;
+        }
+
+        .card-text {
+            font-size: 0.95rem;
+            color: #444;
+        }
+
+        h1 span {
+            font-size: 1.5rem;
+            font-family: 'Comic Sans MS', cursive;
+        }
+
+        /* VIDEO RESPONSIVE HEIGHT SMALL SCREENS */
+        @media (max-width: 576px) {
+            .card video {
+                height: 140px;
+            }
+        }
+
+        .post {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 15px;
+            max-width: 400px;
+        }
+
+        .actions {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+        }
+
+        .actions button {
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .actions button i {
+            margin-right: 5px;
+        }
+
+        .liked {
+            color: blue;
+        }
+
+        .comments-section {
+            display: none;
+            margin-top: 15px;
+        }
+
+        .comment-box {
+            display: flex;
+            margin-top: 10px;
+        }
+
+        .comment-box input {
+            flex: 1;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .comment-box button {
+            padding: 5px 10px;
+            margin-left: 5px;
+        }
+
+        .comment-list {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg custom-navbar shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold text-white" href="#">🎓 Happy Kids</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto text-center">
+                    <li class="nav-item"><a class="nav-link active" href="#home">🏠 Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#numbers">🔢 Numbers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#bible">📖 Bible</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#animals">🐾 Animals</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#stories">📘 Stories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#videos">🎥 Videos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">✉️ Contact</a></li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2 rounded-pill" type="search" placeholder="Search">
+                    <button class="btn btn-light rounded-pill" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="images/1.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="images/2.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="images/3.png" class="d-block w-100" alt="...">
+                <img src="images/4.png" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <div class="m-2" style="background-color: #00ff8c; color: #000000; padding: 5px; border-radius: 8px;">
+        <h1 class="text-center">
+            <span>
+                🌟 Welcome to the Kids Learning World! 🌟
+            </span>
+        </h1>
+    </div>
+
+    <div class="mt-2">
+        <!-- imeanza hapa -->
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="images/2.png" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-body">PROVERBS 22;6 states that</h5>
+                        <p class="card-text">"Train up a child in the way he should go; even when he is old he will not
+                            depart from it." This verse emphasizes the importance of early guidance and education in
+                            shaping a person's character and future choices. It suggests that the foundational lessons
+                            and values instilled during childhood are likely to remain with a person throughout their
+                            life.
+                        </p>
+                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ikaishia hapa -->
+
+        <div class="m-2" id="bible"
+            style="background-color: #00ff8c; color: #000000; padding: 5px; border-radius: 8px;">
+            <h1 class="text-center">
+                <span>
+                    🌟 Learn Bible with videos! 🌟
+                </span>
+            </h1>
+        </div>
+
+        <div class="row row-cols-1 mt-2 row-cols-md-4 g-1">
+            <div class="col">
+                <div class="card">
+                    <video src="videos/1.mp4" class="card-img-top" autoplay controls></video>
+                    <div class="card-body">
+                        <h5 class="card-title">Video 1</h5>
+                        <div class="post">
+                            <p>This is a longer card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+
+                            <div class="actions">
+                                <button id="likeBtn"><i class="bi bi-hand-thumbs-up"></i> <span
+                                        id="likeCount">0</span></button>
+                                <button id="commentBtn"><i class="bi bi-chat"></i> <span
+                                        id="commentCount">0</span></button>
+                                <button id="shareBtn"><i class="bi bi-share"></i> Share</button>
+                            </div>
+
+                            <!-- Comments Section -->
+                            <div class="comments-section" id="commentsSection">
+                                <div class="comment-box">
+                                    <form action="comment.php" method="post">
+                                        <input type="hidden" value="1" name="video">
+                                        <input type="hidden" value="Gwamaka" name="name">
+                                        <input type="text" id="commentInput" name="body"
+                                            placeholder="Andika comment...">
+                                        <button onclick="addComment()" type="submit">Send</button>
+                                    </form>
+                                </div>
+                                <div class="comment-list" id="commentList">
+                                    <?php
+                                    $conn = new mysqli("localhost", "root", "1234", "learningkids");
+
+                                    $video = 1;
+
+                                    $stmt = $conn->prepare("SELECT * FROM comments WHERE video = ?");
+                                    $stmt->bind_param("i", $video);
+                                    $stmt->execute();
+                                    $results = $stmt->get_result();
+
+                                    if ($results->num_rows > 0) {
+                                        while ($comment = $results->fetch_assoc()) {
+                                            echo $comment['name'] . " - " . $comment['time'];
+                                            echo "<br>";
+                                            echo $comment['comment'];
+                                            echo "<hr>";
+
+                                        }
+                                    } else {
+                                        echo "No comments";
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <video src="videos/1.mp4" class="card-img-top" controls></video>
+                    <div class="card-body">
+                        <h5 class="card-title">Video 2</h5>
+                        <div class="post">
+                            <p>This is a longer card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+
+                            <div class="actions">
+                                <button id="likeBtn2"><i class="bi bi-hand-thumbs-up"></i> <span
+                                        id="likeCount2">0</span></button>
+                                <button id="commentBtn2"><i class="bi bi-chat"></i> <span
+                                        id="commentCount2">0</span></button>
+                                <button id="shareBtn2"><i class="bi bi-share"></i> Share</button>
+                            </div>
+
+                            <!-- Comments Section -->
+                            <div class="comments-section" id="commentsSection2">
+                                <div class="comment-box">
+                                    <form action="comment.php" method="post">
+                                        <input type="hidden" value="2" name="video">
+                                        <input type="hidden" value="Gwamaka" name="name">
+                                        <input type="text" id="commentInput2" name="body"
+                                            placeholder="Andika comment...">
+                                        <button onclick="addComment2()" type="submit">Send</button>
+                                    </form>
+                                </div>
+                                <div class="comment-list" id="commentList2">
+                                    <?php
+                                    $conn = new mysqli("localhost", "root", "1234", "learningkids");
+
+                                    $video = 2;
+
+                                    $stmt = $conn->prepare("SELECT * FROM comments WHERE video = ?");
+                                    $stmt->bind_param("i", $video);
+                                    $stmt->execute();
+                                    $results = $stmt->get_result();
+
+                                    if ($results->num_rows > 0) {
+                                        while ($comment = $results->fetch_assoc()) {
+                                            echo $comment['name'] . " - " . $comment['time'];
+                                            echo "<br>";
+                                            echo $comment['comment'];
+                                            echo "<hr>";
+
+                                        }
+                                    } else {
+                                        echo "No comments";
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <video src="videos/1.mp4" class="card-img-top" controls></video>
+                    <div class="card-body">
+                        <h5 class="card-title">Video 3</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <video src="videos/1.mp4" class="card-img-top" controls></video>
+                    <div class="card-body">
+                        <h5 class="card-title">Video 4</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="m-2" id="numbers"
+            style="background-color: #00ff8c; color: #000000; padding: 5px; border-radius: 8px;">
+            <h1 class="text-center">
+                <span>
+                    🌟 Learn Numbers! 🌟
+                </span>
+            </h1>
+        </div>
+
+        <div class="row row-cols-1 mt-2 row-cols-md-4 g-1">
+            <div class="col">
+                <div class="card">
+                    <video src="videos/1.mp4" class="card-img-top" autoplay controls></video>
+                    <div class="card-body">
+                        <h5 class="card-title">Video 1</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <video src="videos/1.mp4" class="card-img-top" controls></video>
+                    <div class="card-body">
+                        <h5 class="card-title">Video 2</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <video src="videos/1.mp4" class="card-img-top" controls></video>
+                    <div class="card-body">
+                        <h5 class="card-title">Video 3</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <video src="videos/1.mp4" class="card-img-top" controls></video>
+                    <div class="card-body">
+                        <h5 class="card-title">Video 4</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="m-2" style="background-color: #00ff8c; color: #000000; padding: 5px; border-radius: 8px;">
+            <h1 class="text-center">
+                <span>
+                    🌟 Learn Animals! 🌟
+                </span>
+            </h1>
+        </div>
+
+        <div class="row row-cols-1 mt-2 row-cols-md-4 g-1">
+            <div class="col">
+                <div class="card">
+                    <video src="videos/1.mp4" class="card-img-top" autoplay controls></video>
+                    <div class="card-body">
+                        <h5 class="card-title">Video 1</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <video src="videos/1.mp4" class="card-img-top" controls></video>
+                    <div class="card-body">
+                        <h5 class="card-title">Video 2</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <video src="videos/1.mp4" class="card-img-top" controls></video>
+                    <div class="card-body">
+                        <h5 class="card-title">Video 3</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <video src="videos/1.mp4" class="card-img-top" controls></video>
+                    <div class="card-body">
+                        <h5 class="card-title">Video 4</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="m-2" style="background-color: #00ff8c; color: #000000; padding: 5px; border-radius: 8px;">
+            <h1 class="text-center">
+                <span>
+                    🌟 Read stories! 🌟
+                </span>
+            </h1>
+        </div>
+
+        <div class="row row-cols-1 mt-2 row-cols-md-4 g-1">
+            <div class="col">
+                <div class="card">
+                    <video src="videos/1.mp4" class="card-img-top" autoplay controls></video>
+                    <div class="card-body">
+                        <h5 class="card-title">Video 1</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <video src="videos/1.mp4" class="card-img-top" controls></video>
+                    <div class="card-body">
+                        <h5 class="card-title">Video 2</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <video src="videos/1.mp4" class="card-img-top" controls></video>
+                    <div class="card-body">
+                        <h5 class="card-title">Video 3</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <video src="videos/1.mp4" class="card-img-top" controls></video>
+                    <div class="card-body">
+                        <h5 class="card-title">Video 4</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="m-2" style="background-color: #00ff8c; color: #000000; padding: 5px; border-radius: 8px;">
+            <h1 class="text-center">
+                <span>
+                    🌟 Watch Cartoon! 🌟
+                </span>
+            </h1>
+        </div>
+
+        <div class="row row-cols-1 mt-2 row-cols-md-4 g-1">
+            <div class="col">
+                <div class="card">
+                    <video src="videos/6.mp4" class="card-img-top" autoplay controls></video>
+                    <div class="card-body">
+                        <h5 class="card-title">Video 1</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <video src="videos/2.mp4" class="card-img-top" controls></video>
+                    <div class="card-body">
+                        <h5 class="card-title">Video 2</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <video src="videos/3.mp4" class="card-img-top" controls></video>
+                    <div class="card-body">
+                        <h5 class="card-title">Video 3</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <video src="videos/4.mp4" class="card-img-top" controls></video>
+                    <div class="card-body">
+                        <h5 class="card-title">Video 4</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-2 align-items-center">
+            <div class="col">
+                <div class="card shadow bg-primary text-white">
+                    In a world full of fast-changing technology and screens everywhere ,
+                    are growing up in a digital jungle 🌐.
+                    But not everything out there is safe, helpful, or good for their hearts 💔.
+                    websites are full of violence, noise, or empty entertainment.
+                </div>
+            </div>
+            <div class="col">
+                <div class="card shadow bg-secondary text-white">
+                    why we built this place: a bright, colorful, and joyful online world made just for children. A place
+                    where learning is fun. A place where every click is a step toward growth, creativity, and
+                    confidence.
+                </div>
+            </div>
+            <div class="col">
+                <div class="card shadow bg-success text-white">
+                    🎯 Why this website matters: - It helps kids learn numbers with sound and color 🎨
+                    - It shares fun animal videos that are kind, funny, and safe 🐾
+                    - It protects children from harmful ads, violence, and stress ❌
+                    - It is created by caring hearts – not by algorithms or marketing machines 💝
+                    - It’s easy to use, even by a 3-year-old child with no help 👶
+                </div>
+            </div>
+        </div>
+
+        <div class="m-auto card p-2 shadow bg-secondary w-25">
+            💡 We believe in a better digital world for children. One filled with hope, not fear. One filled with
+            <br><br>
+            <span><a href="more.html" class="bg-primary p-2 rounded-2 text-white">Read more</a></span>
+            <br>
+        </div>
+    </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+
+    <script>
+        let liked = false;
+        let likeCount = 0;
+        let commentCount = 0;
+
+        // Like button
+        document.getElementById("likeBtn").addEventListener("click", function () {
+            liked = !liked;
+            if (liked) {
+                this.classList.add("liked");
+                likeCount++;
+            } else {
+                this.classList.remove("liked");
+                likeCount--;
+            }
+            document.getElementById("likeCount").innerText = likeCount;
+        });
+
+        // Toggle Comment Section
+        document.getElementById("commentBtn").addEventListener("click", function () {
+            const commentsSection = document.getElementById("commentsSection");
+            if (commentsSection.style.display === "none" || commentsSection.style.display === "") {
+                commentsSection.style.display = "block";
+            } else {
+                commentsSection.style.display = "none";
+            }
+        });
+
+        // Add Comment
+        // function addComment() {
+        //     const input = document.getElementById("commentInput");
+        //     const text = input.value.trim();
+        //     if (text !== "") {
+        //         const commentList = document.getElementById("commentList");
+        //         const newComment = document.createElement("p");
+        //         newComment.textContent = text;
+        //         commentList.appendChild(newComment);
+
+        //         commentCount++;
+        //         document.getElementById("commentCount").innerText = commentCount;
+
+        //         input.value = "";
+        //     }
+        // }
+
+        // Share Button
+        document.getElementById("shareBtn").addEventListener("click", function () {
+            const postLink = window.location.href; // kwa sasa inachukua link ya ukurasa
+            navigator.clipboard.writeText(postLink);
+            alert("Link ya post imekopiwa! 📋");
+        });
+    </script>
+
+
+
+    <script>
+        let liked2 = false;
+        let likeCount2 = 0;
+        let commentCount2 = 0;
+
+        // Like button
+        document.getElementById("likeBtn2").addEventListener("click", function () {
+            liked2 = !liked2;
+            if (liked2) {
+                this.classList.add("liked2");
+                likeCount2++;
+            } else {
+                this.classList.remove("liked2");
+                likeCount2--;
+            }
+            document.getElementById("likeCount2").innerText = likeCount2;
+        });
+
+        // Toggle Comment Section
+        document.getElementById("commentBtn2").addEventListener("click", function () {
+            const commentsSection2 = document.getElementById("commentsSection2");
+            if (commentsSection2.style.display === "none" || commentsSection2.style.display === "") {
+                commentsSection2.style.display = "block";
+            } else {
+                commentsSection2.style.display = "none";
+            }
+        });
+
+        // Add Comment
+        // function addComment() {
+        //     const input = document.getElementById("commentInput");
+        //     const text = input.value.trim();
+        //     if (text !== "") {
+        //         const commentList = document.getElementById("commentList");
+        //         const newComment = document.createElement("p");
+        //         newComment.textContent = text;
+        //         commentList.appendChild(newComment);
+
+        //         commentCount++;
+        //         document.getElementById("commentCount").innerText = commentCount;
+
+        //         input.value = "";
+        //     }
+        // }
+
+        // Share Button
+        document.getElementById("shareBtn2").addEventListener("click", function () {
+            const postLink2 = window.location.href; // kwa sasa inachukua link ya ukurasa
+            navigator.clipboard.writeText(postLink2);
+            alert("Link ya post imekopiwa! 📋");
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+<?php
+$conn = new mysqli("localhost", "root", "1234", "learningkids");
+
+$video = $_POST['video'];
+$name = $_POST['name'];
+$comment = $_POST['body'];
+
+if ($conn->query("INSERT INTO comments (video, name, comment) VALUES ('$video', '$name', '$comment')")) {
+    echo "Comment $comment added";
+}
+
+?>
+

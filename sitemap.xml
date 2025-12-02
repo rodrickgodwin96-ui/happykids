@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://www.happykidslearning.com/</loc>
+    <lastmod>2025-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Numbers & ABC Page -->
+  <url>
+    <loc>https://www.happykidslearning.com/abc-numbers</loc>
+    <lastmod>2025-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Animals Page -->
+  <url>
+    <loc>https://www.happykidslearning.com/animal-videos</loc>
+    <lastmod>2025-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Bible Stories Page -->
+  <url>
+    <loc>https://www.happykidslearning.com/bible-stories</loc>
+    <lastmod>2025-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog Section -->
+  <url>
+    <loc>https://www.happykidslearning.com/blog</loc>
+    <lastmod>2025-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Contact Page -->
+  <url>
+    <loc>https://www.happykidslearning.com/contact</loc>
+    <lastmod>2025-07-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+</urlset>
